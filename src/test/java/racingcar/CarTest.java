@@ -39,4 +39,19 @@ public class CarTest {
 		// then
 		assertThat(car.getPosition()).isEqualTo(0);
 	}
+
+	@Test
+	@DisplayName("게임 상태 출력 테스트")
+	void gameStatus() {
+		// given
+		Car car = new Car("jun");
+
+		// when
+		car.run(5);
+		car.run(7);
+
+		// then
+		assertThat(car.gameStatus()).isEqualTo("jun : --");
+	}
+
 }

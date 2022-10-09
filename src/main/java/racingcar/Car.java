@@ -1,6 +1,8 @@
 package racingcar;
 
 public class Car {
+	private final String STATUS_CHAR = "-";
+
 	private final String name;
 	private int position;
 
@@ -28,5 +30,17 @@ public class Car {
 		if (name.length() > 5) {
 			throw new IllegalArgumentException("[ERROR] 이름은 5자리 이하로만 가능합니다.");
 		}
+	}
+
+	private String status() {
+		String result = "";
+		for (int i = 0; i < this.position; i++) {
+			result += STATUS_CHAR;
+		}
+		return result;
+	}
+
+	public String gameStatus() {
+		return this.name + " : " + status();
 	}
 }
