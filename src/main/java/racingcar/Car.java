@@ -5,6 +5,7 @@ public class Car {
 	private int position;
 
 	public Car(String name) {
+		validName(name);
 		this.name = name;
 		this.position = 0;
 	}
@@ -21,5 +22,11 @@ public class Car {
 
 	public String getName() {
 		return name;
+	}
+
+	private void validName(String name) {
+		if (name.length() > 5) {
+			throw new IllegalArgumentException("[ERROR] 이름은 5자리 이하로만 가능합니다.");
+		}
 	}
 }
