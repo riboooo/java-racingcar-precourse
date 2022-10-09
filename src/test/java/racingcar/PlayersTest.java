@@ -8,7 +8,7 @@ public class PlayersTest {
 	@Test
 	void createPlayer() {
 		Players players = new Players("jun,jack,tim");
-		assertThat(players.getCarList()).extracting("name").contains("jun", "jack", "tim");
+		assertThat(players.getCarNameList()).contains("jun", "jack", "tim");
 	}
 
 }

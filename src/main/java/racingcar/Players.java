@@ -17,7 +17,11 @@ public class Players {
 		return carList;
 	}
 
-	public ArrayList<Car> getCarList() {
-		return carList;
+	public ArrayList<String> getCarNameList() {
+		ArrayList<String> nameList = new ArrayList<>();
+		for (Car car : this.carList) {
+			nameList.add(car.getName());
+		}
+		return nameList;
 	}
 }
