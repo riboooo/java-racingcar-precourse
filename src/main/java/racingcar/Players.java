@@ -2,6 +2,8 @@ package racingcar;
 
 import java.util.ArrayList;
 
+import camp.nextstep.edu.missionutils.Randoms;
+
 public class Players {
 	private final ArrayList<Car> carList;
 
@@ -23,5 +25,19 @@ public class Players {
 			nameList.add(car.getName());
 		}
 		return nameList;
+	}
+
+	public void run() {
+		for (Car car : this.carList) {
+			car.run(Randoms.pickNumberInRange(0, 9));
+		}
+	}
+
+	public String status() {
+		String result = "";
+		for (Car car : this.carList) {
+			result += car.gameStatus() + "\n";
+		}
+		return result;
 	}
 }
