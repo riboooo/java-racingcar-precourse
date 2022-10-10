@@ -18,7 +18,7 @@ public class Car {
 		}
 	}
 
-	public int getPosition() {
+	public Integer getPosition() {
 		return this.position;
 	}
 

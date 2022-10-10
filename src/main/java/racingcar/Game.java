@@ -19,7 +19,7 @@ public class Game {
 	}
 
 	private void gameResult() {
-		String winner = "winner";
+		String winner = this.players.getWinner();
 		System.out.println("최종 우승자 : " + winner);
 	}
 
