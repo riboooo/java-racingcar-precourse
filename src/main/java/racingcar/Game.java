@@ -9,9 +9,9 @@ public class Game {
 	public Game() {
 	}
 
-	public void play(String userNames) {
+	public void play() {
 		printCarNameMessage();
-		initGame(userNames);
+		initGame(readLine());
 		printLabCountMessage();
 		insertLab(readLine());
 		runCar();
@@ -44,7 +44,13 @@ public class Game {
 	}
 
 	private void initGame(String userNames) {
-		this.players = new Players(userNames);
+		try {
+			this.players = new Players(userNames);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			this.initGame(readLine());
+		}
+
 	}
 
 	private void insertLab(String lab) {
